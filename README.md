@@ -4,7 +4,7 @@
 
 ### 1.Reason of Testing framework choice
 
-I decide to choose Cypress because this test is front end focused and cypress is designed for the frontend testing. it can easily interacts with elements and interacts. I can also choose playwright that has multiple browser testing but personally i am more familiar with cyress and it is much more easier to use.
+I decide to choose Cypress because this test is front end focused and cypress is designed for the frontend testing. it can easily interacts with elements and interacts. I can also choose playwright that has multiple browser testing. Personally I am more familiar with cypress and it is much more easier to use.
 
 ### 2.Local setup
 
