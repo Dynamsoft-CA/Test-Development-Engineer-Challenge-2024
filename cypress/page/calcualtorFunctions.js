@@ -7,7 +7,7 @@ class calculatorPage {
   enterNumber(num) {
     const digits = String(num).split('');
     digits.forEach(digit => {
-      cy.get(`[data-char=${digit}]`).click();
+      cy.get(`[data-char="${digit}"]`).click();
     })
   }
 
@@ -32,7 +32,7 @@ class calculatorPage {
   }
 
   clear() {
-    cy.get(`[data-char="clear"]`).click();
+    cy.get(`[data-action="clear"]`).click();
   }
 
   openBracket() {
@@ -50,6 +50,11 @@ class calculatorPage {
   backspace() {
     cy.get(`[data-action="backspace"]`).click();
   }
+
+  getResult() {
+    return cy.get(".result").invoke('text');
+  }
+
 }
 
 
