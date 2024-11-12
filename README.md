@@ -11,20 +11,20 @@ I decide to choose Cypress because this test is front end focused and cypress is
 Install http server globally
 
 ```console
-npm install -g http-server.
+npm install -g http-server
 ```
 
 Open another terminal to run the following command to create the index.html in a local host 8080
 if local host 8080 is occupied, update in the cypress test calculatorFunctions.js
 
 ```console
-`http-server [path-to-projectfolder]/Test-Development-Engineer-Challenge-2024`
+http-server [path-to-projectfolder]/Test-Development-Engineer-Challenge-2024
 ```
 
 Open the second terminal to run
 
 ```console
-`npx cypress open`
+npx cypress open
 ```
 
 ## Overview
