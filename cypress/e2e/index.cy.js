@@ -1,6 +1,6 @@
 import calculatorPage from "../page/calcualtorFunctions"
 
-describe('template spec', () => {
+describe('Calculator functions', () => {
   beforeEach(() => {
     calculatorPage.visit();
   })
@@ -99,10 +99,7 @@ describe('template spec', () => {
       expect(result).to.equal("2.01818182");
     })
 
-
-
   })
-
 
   it('can do calculation base on previous calculation', () => {
     calculatorPage.enterNumber(2);

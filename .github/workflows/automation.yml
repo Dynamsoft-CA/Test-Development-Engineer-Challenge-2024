@@ -1,0 +1,44 @@
+name: automation
+
+on:
+  push:
+    branches:
+      - alexlitest
+      - main
+  pull_request:
+    branches:
+      - alexlitest
+      - main
+
+jobs:
+  cypress-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "12.22.3" # Node.js version to use
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Start http-server
+        run: npx http-server . -p 8080 &
+        working-directory: ./
+
+      - name: Run Cypress tests
+        run: npx cypress run
+        env:
+          CYPRESS_BASE_URL: "http://localhost:8080"
+
+      # Optional: Upload Cypress test artifacts on failure
+      - name: Upload Cypress artifacts
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-artifacts
+          path: cypress/screenshots # Adjust if necessary
