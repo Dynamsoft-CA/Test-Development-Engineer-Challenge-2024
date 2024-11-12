@@ -21,7 +21,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "12.22.3" # Node.js version to use
+          node-version: "18.20.4"
 
       - name: Install dependencies
         run: npm install
@@ -34,11 +34,3 @@ jobs:
         run: npx cypress run
         env:
           CYPRESS_BASE_URL: "http://localhost:8080"
-
-      # Optional: Upload Cypress test artifacts on failure
-      - name: Upload Cypress artifacts
-        if: failure()
-        uses: actions/upload-artifact@v3
-        with:
-          name: cypress-artifacts
-          path: cypress/screenshots # Adjust if necessary
